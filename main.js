@@ -6,7 +6,11 @@
   const todos = [];
 
   addButton.addEventListener('click', () => {
-    const todo = { id: todos.length, comment: inputBox.value, status: '作業中' };
+    const todo = {
+      id: todos.length,
+      comment: inputBox.value,
+      status: '作業中',
+    };
     inputBox.focus();
     if (inputBox.value === '') {
       console.log('タスクを入力してください！');
@@ -17,7 +21,6 @@
     radioChange();
   });
 
-  // 「todos」の中身を一覧表示するための関数を用意する //
   const showTodos = (selecttodos) => {
     addTaskTarget.textContent = '';
     selecttodos.forEach((todo) => {
@@ -40,7 +43,6 @@
     });
   };
 
-  //「状態機能」を管理するボタンを生成する関数
   const createStatusButton = (todo) => {
     const statusButton = document.createElement('button');
     statusButton.innerText = todo.status;
@@ -56,11 +58,10 @@
     return statusButton;
   };
 
-  //「削除機能」を管理するボタンを生成する関数
   const createDeleteButton = (index) => {
-    const createdeletebutton = document.createElement("button");
-    createdeletebutton.textContent = "削除";
-    createdeletebutton.addEventListener("click", () => {
+    const createdeletebutton = document.createElement('button');
+    createdeletebutton.textContent = '削除';
+    createdeletebutton.addEventListener('click', () => {
       todos.splice(index, 1);
       showTodos(todos);
       todos.reduce((Idnum, todo) => (todo.id = Idnum + 1), -1);
@@ -69,11 +70,10 @@
     return createdeletebutton;
   };
 
-  //ラジオボタンを押した際にフィルタリングする為の関数
   function radioChange() {
-    const radio1_1 = document.getElementById("radio-all-select");
-    const radio1_2 = document.getElementById("adio-working-select");
-    const radio1_3 = document.getElementById("radio-done-select");
+    const radio1_1 = document.getElementById('radio-all-select');
+    const radio1_2 = document.getElementById('adio-working-select');
+    const radio1_3 = document.getElementById('radio-done-select');
 
     if (radio1_1.checked) {
       todos.slice();
