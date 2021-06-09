@@ -1,1 +1,38 @@
-master
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript3-1</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1>ToDoリスト</h1>
+  </header>
+
+  <form class="radio_button">
+    <input type="radio" name="syurui" checked="checked" id="radio-all-select" onchange="radioChange()" value="all">すべて
+    <input type="radio" name="syurui" id="adio-working-select" onchange="radioChange()" value="doing">作業中
+    <input type="radio" name="syurui" id="radio-done-select" onchange="radioChange()" value="done">完了
+  </form>
+
+
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>コメント</th>
+      <th>状態</th>
+    </thead>
+    <tbody id="addTask-target"></tbody>
+  </table>
+
+  <h2>新規タスクの追加</h2>
+
+  <input id="input-todo" type="text">
+  <button id="add-button">追加</button>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
