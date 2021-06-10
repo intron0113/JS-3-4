@@ -53,7 +53,6 @@
         todo.status = '作業中';
       }
       showTodos(todos);
-      console.log(todos);
     });
     return statusButton;
   };
@@ -79,12 +78,12 @@
       todos.slice();
       return showTodos(todos);
     } else if (radio1_2.checked) {
-      let filterdoing = todos.filter((todo) => {
+      const filterdoing = todos.filter((todo) => {
         return todo.status === '作業中';
       });
       return showTodos(filterdoing);
     } else if (radio1_3.checked) {
-      let filterdone = todos.filter((todo) => {
+      const filterdone = todos.filter((todo) => {
         return todo.status === '完了';
       });
       return showTodos(filterdone);
